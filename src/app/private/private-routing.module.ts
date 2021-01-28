@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {AuthenticationComponent} from './authentication.component';
+import {PrivateComponent} from './private.component';
 
 
 
 const routes: Routes = [
   {
     path: '',
-    component: AuthenticationComponent
+    component: PrivateComponent
   }
 ];
 
@@ -15,4 +15,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthenticationRoutingModule { }
+export class PrivateRoutingModule { }
