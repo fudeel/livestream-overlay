@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "liveoverlay-0000": {
+      "hosting": {
+        "twitchlivescore": [
+          "liveoverlay-0000"
+        ]
+      }
+    }
+  }
+}
