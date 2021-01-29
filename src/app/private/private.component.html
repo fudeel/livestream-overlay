@@ -1,1 +1,71 @@
-<p>private works!</p>
+<app-navbar></app-navbar>
+<div class="container mt-6">
+  <h1 class="title is-2 is-spaced">Match Dashboard</h1>
+  <h2 class="subtitle">Manage the Teams, result and the view</h2>
+  <div class="block">
+    <span class="tag is-info">Current Match information</span>
+  </div>
+  <div class="block">
+    <button class="button is-primary" (click)="onEdit()" *ngIf="!isEdit">Edit <i class="lo-icon gg-pen"></i></button>
+  </div>
+  <div class="block" *ngIf="isEdit">
+    <div class="tile">
+      <!-- The magical tile element! -->
+      <form class="box"  [formGroup]="currentMatchForm">
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Full Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Team 1 Full name" maxlength="16" formControlName="teamOneName">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Score</label>
+              <div class="control">
+                <input class="lo-score input" type="number" placeholder="Three letters" maxlength="3" min="0"  formControlName="teamOneScore">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="field">
+              <label class="label">Full Name</label>
+              <div class="control">
+                <input class="input" type="text" placeholder="Team 2 Full name"  maxlength="16"  formControlName="teamTwoName">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label">Score</label>
+              <div class="control">
+                <input class="lo-score input" type="number" placeholder="Three letters" maxlength="3" min="0"  formControlName="teamTwoScore">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="button is-danger mr-3" (click)="onCancelFormEdit()">Cancel <i class="lo-icon gg-close"></i></button>
+        <button class="button is-link is-pulled-right" (click)="onConfirmCurrentMatchForm()" [disabled]="currentMatchForm.status === 'INVALID'">Confirm <i class="lo-icon gg-check"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="notification is-primary has-text-centered	">
+      <h1 class="title is-centered">
+        <span  class="subtitle">{{teamOneName}}</span>
+        <span class="score">{{teamOneScore}}</span>
+        <span>:</span>
+        <span class="score">{{teamTwoScore}}</span>
+        <span class="subtitle">{{teamTwoName}}</span>
+      </h1>
+    </div>
+  </div>
+  <div class="block mt-6">
+    <span class="tag is-info">Enable/Disable element on screen</span>
+  </div>
+</div>

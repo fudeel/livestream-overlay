@@ -1,0 +1,35 @@
+<nav class="navbar is-fixed-top has-shadow">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <h1 class="title is-3 mr-5"><span class="has-text-primary">LIVE </span><span class="has-text-info">OVERLAY</span></h1>
+    </a>
+    <div (click)="toggleNavbar()" #navBurger role="button" class="navbar-burger" data-target="navbarExampleTransparentExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div id="navbarExampleTransparentExample" class="navbar-menu" #navMenu>
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="../private">
+        Match Dashboard
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control" (click)="onLogout()">
+            <a class="button is-primary">
+              <span class="icon">
+                <i class="gg-log-out"></i>
+              </span>
+              <span>Logout</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
